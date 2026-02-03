@@ -1,0 +1,286 @@
+/* ================= VARIABLES ================= */
+:root {
+    --ft-navy: #0a1931;       /* Background utama (Deep Rich Navy) */
+    --ft-navy-card: #122c4d;
+    --ft-red: #dc2626;        
+    --ft-gold: #fbbf24;       
+    --ft-gold-dark: #d97706;  
+    --text-white: #f8fafc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    
+    /* BACKGROUND GAMBAR DENGAN LAPISAN GELAP */
+    /* Ganti '../img/bg.jpg' jika nama file Anda berbeda */
+    background: 
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)),
+        url('../img/kabinet.jpeg');
+    
+    background-size: cover;       /* Agar gambar memenuhi layar */
+    background-position: center;  /* Agar fokus gambar di tengah */
+    background-attachment: fixed; /* Agar gambar diam saat di-scroll */
+    background-repeat: no-repeat;
+    
+    color: var(--text-white);
+    min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+.main-header {
+    /* ...kode background tetap... */
+    
+    /* GANTI BAGIAN INI: */
+    padding: 30px 0; /* Turunkan drastis dari 80px ke 30px */
+    
+    text-align: center;
+    border-top: 5px solid var(--ft-red);
+    margin-bottom: 1px; /* Jarak bawah tipis */
+}
+
+.header-content h1 {
+    margin: 0; font-weight: 800; font-size: 2.5rem; letter-spacing: 2px;
+}
+
+.text-highlight {
+    color: var(--ft-red); text-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+}
+
+.header-content p {
+    margin: 5px 0 0; color: var(--ft-gold); font-weight: 600;
+    letter-spacing: 4px; font-size: 0.9rem; text-transform: uppercase;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 20px; /* Kurangi padding bawah */
+}
+.hidden { display: none !important; }
+
+/* ================= INPUTS & BUTTONS ================= */
+input {
+    background: var(--ft-navy-card); border: 2px solid #334155; color: white;
+    padding: 12px; border-radius: 8px; font-size: 1rem; text-align: center; margin: 5px;
+}
+
+button {
+    cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 700;
+    border: none; transition: transform 0.1s;
+}
+button:active { transform: scale(0.96); }
+
+.btn-gold {
+    background: var(--ft-gold); color: #0f172a; padding: 12px 24px;
+    border-radius: 8px; text-transform: uppercase;
+}
+
+.btn-red-gradient {
+    background: linear-gradient(135deg, var(--ft-red), #991b1b);
+    color: white; padding: 15px 30px; border-radius: 8px; font-size: 1.1rem;
+    margin-top: 20px; width: 100%; max-width: 300px;
+}
+
+.btn-outline {
+    background: transparent; border: 2px solid #475569; color: #94a3b8;
+    padding: 10px 20px; border-radius: 50px;
+}
+.btn-outline:hover { border-color: white; color: white; }
+
+.btn-gold-solid {
+    background: linear-gradient(135deg, var(--ft-gold), var(--ft-gold-dark));
+    color: black; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+}
+
+/* ================= SETUP PANEL ================= */
+.setup-panel {
+    background: var(--ft-navy-card); 
+    padding: 40px; 
+    border-radius: 20px;
+    text-align: center; 
+    max-width: 600px; 
+    
+    /* GANTI BARIS INI: */
+    margin: 20px auto; /* Memberi jarak 120px dari atas/bawah agar terlihat di tengah */
+    
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-input-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px; margin-top: 20px;
+}
+
+/* ================= TIMER ================= */
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Kurangi dari 50px ke 20px */
+}
+
+/* GANTI BAGIAN INI */
+.timer-box {
+    width: 200px;  /* Kecilkan dari 280px */
+    height: 200px; /* Kecilkan dari 280px */
+    
+    background: radial-gradient(circle, #1e293b 0%, #0f172a 100%);
+    border: 4px solid var(--ft-red);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
+    
+    margin-bottom: 15px; /* Kurangi jarak bawah timer */
+}
+
+/* GANTI UKURAN FONT ANGKA */
+.timer-display {
+    font-size: 5rem; /* Kecilkan dari 8rem ke 5rem */
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    text-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.timer-label {
+    font-size: 1.2rem; color: var(--ft-red); font-weight: 700; letter-spacing: 2px;
+}
+
+.timer-controls {
+    display: flex; gap: 10px; align-items: center;
+    background: var(--ft-navy-card); padding: 10px 20px; border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.input-timer-wrapper input {
+    /* ... width dll tetap ... */
+    border: none;
+    background: var(--ft-navy); /* Ubah ini agar ikut warna background baru */
+}
+.btn-control { padding: 10px 20px; border-radius: 8px; color: white; }
+.btn-start { background: var(--ft-gold); color: black; }
+.btn-pause { background: #475569; }
+.btn-reset { background: var(--ft-red); }
+
+/* ================= SCORE BOARD ================= */
+.score-grid {
+    display: flex;        /* KUNCI UTAMA: Flexbox membagi ruang secara otomatis */
+    width: 100%;
+    background: var(--ft-navy-card); /* Warna background pindah ke wadah utama */
+    border-radius: 20px;  /* Sudut melengkung untuk seluruh papan */
+    overflow: hidden;     /* Agar isi di dalamnya mengikuti lengkungan sudut */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Efek bayangan */
+    margin-top: 20px;
+    border: 1px solid rgba(255,255,255,0.1); /* Garis tepi halus */
+}
+
+.team-box {
+    flex: 1;              /* FITUR OTOMATIS: Jika 2 tim jadi 50%, 3 tim jadi 33% */
+    background: transparent; /* Hapus background individu */
+    border-radius: 0;     /* Hapus sudut individu (jadi kotak) */
+    box-shadow: none;     /* Hapus bayangan individu */
+    padding: 30px 15px;   /* Jarak dalam yang lega */
+    text-align: center;
+    position: relative;
+    
+    /* SKAT PEMBATAS (Garis vertikal di sebelah kanan) */
+    border-right: 2px solid rgba(255, 255, 255, 0.15);
+    
+    /* Aksen Emas di bagian atas setiap kolom */
+    border-top: 6px solid var(--ft-gold); 
+}
+
+.team-box:last-child {
+    border-right: none;
+}
+
+.team-box h2 {
+    font-size: 1.5rem;
+    color: var(--text-white);
+    margin-bottom: 20px;
+    border-bottom: none; /* Hapus garis bawah nama tim agar lebih bersih */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.score {
+    /* GANTI BAGIAN INI: */
+    font-size: 4rem; /* Turunkan dari 6rem ke 4rem */
+    
+    font-weight: 800;
+    color: var(--ft-gold);
+    text-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+    
+    /* GANTI JARAK: */
+    margin: 5px 0; /* Rapatkan jarak atas-bawah */
+}
+
+.score-btn { display: flex; justify-content: center; gap: 15px; }
+
+.score-btn button {
+    /* GANTI UKURAN KOTAK: */
+    width: 45px;  /* Kecilkan dari 60px */
+    height: 45px; /* Kecilkan dari 60px */
+    
+    /* GANTI UKURAN TEKS: */
+    font-size: 1.2rem; /* Kecilkan dari 1.8rem */
+    
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-btn button:first-child {
+    background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 2px solid #22c55e;
+}
+.score-btn button:first-child:hover { background: #22c55e; color: black; }
+
+.score-btn button:last-child {
+    background: rgba(239, 68, 68, 0.2); color: #f87171; border: 2px solid #ef4444;
+}
+.score-btn button:last-child:hover { background: #ef4444; color: white; }
+
+/* ================= POPUP ================= */
+.popup {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    display: none; z-index: 9999;
+}
+.popup.show { display: flex; justify-content: center; align-items: center; }
+
+.popup-overlay {
+    position: absolute; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px);
+}
+
+.popup-content {
+    position: relative; background: var(--ft-navy-card);
+    border: 2px solid var(--ft-gold); padding: 60px 80px;
+    border-radius: 30px; text-align: center;
+    box-shadow: 0 0 50px rgba(251, 191, 36, 0.2);
+    animation: zoomIn 0.3s ease; max-width: 80%;
+}
+
+.popup-content h1 { color: var(--ft-gold); font-size: 4rem; margin: 0; text-transform: uppercase; }
+.popup-content p { font-size: 2.5rem; color: white; margin: 20px 0 40px; }
+
+@keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Control Box */
+.control-box {
+    /* GANTI BAGIAN INI: */
+    margin-top: 10px;  /* Kurangi drastis dari 50px ke 10px */
+    padding-top: 15px; /* Kurangi jarak dalam dari 30px ke 15px */
+    
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1); /* Garis pemisah tipis */
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCC Fakultas Teknik 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="main-wrapper">
+
+    <header class="main-header">
+        <div class="header-content">
+            <h1>LOMBA CERDAS CERMAT <span class="text-highlight">TEKNIK 2026</span></h1>
+            <p id="subTitle">Fakultas Teknik Universitas Majalengka</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="setup" class="setup-panel">
+            <h2>Konfigurasi Match</h2>
+            <div class="input-group">
+                <input type="number" id="teamCount" placeholder="Jumlah Tim (Misal: 3)" min="1">
+            </div>
+            <button class="btn-gold" onclick="createTeams()">Buat Tim</button>
+            <div id="teamInputs" class="team-input-grid"></div>
+            <button class="btn-red-gradient" onclick="startMatch()">MULAI PERTANDINGAN</button>
+        </section>
+
+        <section id="match" class="hidden">
+
+            <div class="timer-container">
+                <div class="timer-box">
+                    <div class="timer-display" id="timeDisplay">15</div>
+                    <div class="timer-label">DETIK</div>
+                </div>
+                
+                <div class="timer-controls">
+                    <div class="input-timer-wrapper">
+                        <input type="number" id="customTime" placeholder="Set Detik" value="15">
+                    </div>
+                    <button class="btn-control btn-start" onclick="startTimer()">▶ MULAI</button>
+                    <button class="btn-control btn-pause" onclick="pauseTimer()">⏸ PAUSE</button>
+                    <button class="btn-control btn-reset" onclick="resetTimer()">⟲ RESET</button>
+                </div>
+            </div>
+
+            <div id="scoreBoard" class="score-grid"></div>
+
+            <div class="control-box">
+                <button class="btn-outline" onclick="resetScore()">Reset Semua Skor</button>
+                <button class="btn-gold-solid" onclick="setWinner()">TENTUKAN PEMENANG</button>
+            </div>
+
+        </section>
+    </div>
+
+</div>
+
+<div id="popup" class="popup">
+    <div class="popup-overlay" onclick="closePopup()"></div>
+    <div class="popup-content">
+        <h1 id="popupTitle">JUDUL</h1>
+        <p id="popupText">Isi pesan...</p>
+        <button class="btn-red-gradient" onclick="closePopup()">TUTUP</button>
+    </div>
+</div>
+
+<audio id="benar" src="sound/benar.mp3"></audio>
+<audio id="salah" src="sound/salah.mp3"></audio>
+<audio id="menang" src="sound/menang.mp3"></audio>
+<audio id="tik" src="sound/tik.mp3"></audio>
+
+<script src="js/app.js"></script>
+</body>
+</html>
